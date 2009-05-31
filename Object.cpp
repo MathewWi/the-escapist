@@ -1,0 +1,127 @@
+#include "Object.h"
+
+Object::Object(int x, int y, float s_x, float s_y)
+{
+	posX = x;
+	posY = y;
+	speedX = s_x;
+	speedY = s_y;
+	
+}
+
+Object::Object()
+{
+	speedX = 10;
+	speedY = 10;
+	
+}
+
+float Object::getSpeedX()
+{
+	return speedX;
+}
+
+float Object::getSpeedY()
+{
+	return speedY;
+}
+
+int Object::getX()
+{
+	return (int)posX;
+}
+
+int Object::getY()
+{
+	return (int)posY;
+}
+
+void Object::setX(int x)
+{
+	posX = (float)x;
+}
+
+void Object::setY(int y)
+{
+	posY = (float)y;
+}
+
+void Object::changeSpeedX(float x)
+{
+	speedX = x;
+}
+
+void Object::changeSpeedY(float y)
+{
+	speedY = y;
+}
+
+void Object::setSpeedX(float x)
+{
+	speedX = x;
+}
+
+void Object::setSpeedY(float y)
+{
+	speedY = y;
+}
+
+void Object::blit(SDL_Surface *screen)
+{
+	
+	SDL_Rect offset;
+	offset.x = (int)posX;
+	offset.y = (int)posY;
+	if( speedY >= 0 ) SDL_BlitSurface( *sadface, NULL, screen, &offset );
+	else SDL_BlitSurface( *awesome, NULL, screen, &offset );
+}
+
+void Object::checkCollision()
+{
+	if ( posX >= SCREEN_WIDTH-SIZE_AWESOME )
+	{
+		 speedX = -speedX*SURFACE_HARDNESS;
+		 posX = SCREEN_WIDTH-SIZE_AWESOME;
+		 
+	}
+	if ( posY >= SCREEN_HEIGHT-SIZE_AWESOME )
+	{
+		speedY = -speedY*SURFACE_HARDNESS;
+		posY = SCREEN_HEIGHT-SIZE_AWESOME;
+		
+	}
+	if ( posX <= 0 )
+	{
+		speedX = -speedX*SURFACE_HARDNESS;
+		posX = 0;
+		
+	}
+	if ( posY <= 0 )
+	{ 
+		speedY = -speedY*SURFACE_HARDNESS;
+		posY = 0;
+		
+	}
+}
+
+
+Object::~Object()
+{
+	
+}
+
+void Object::updateCo(int ticks, float force)
+{
+	posX += speedX * (float)ticks/1000;
+	posY += speedY * (float)ticks/1000;
+	if (posX > SCREEN_WIDTH-SIZE_AWESOME) posX = SCREEN_WIDTH-SIZE_AWESOME;
+	else if (posX < 0) posX = 0;
+
+	if (posY > SCREEN_HEIGHT-SIZE_AWESOME) posY = SCREEN_HEIGHT-SIZE_AWESOME;
+	else if (posY < 0) posY = 0;
+	//posX += 1;
+	//posY += 1;
+	speedY += (float)ticks*(GRAVITY_CONS+force)/1000;
+}
+
+	
