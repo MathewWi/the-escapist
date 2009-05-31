@@ -25,6 +25,7 @@ Object::Object(int x, int y, float s_x, float s_y)
 	speedX = s_x;
 	speedY = s_y;
 	grounded = false;
+	stopped = false;
 	
 }
 
@@ -33,6 +34,7 @@ Object::Object()
 	speedX = 10;
 	speedY = 10;
 	grounded = false;
+	stopped = false;
 	
 }
 
@@ -98,6 +100,8 @@ void Object::blit(SDL_Surface *screen)
 
 void Object::checkCollision()
 {
+	if( posY < SCREEN_HEIGHT-SIZE_AWESOME ) stopped = false;
+	
 	if ( posX >= SCREEN_WIDTH-SIZE_AWESOME )
 	{
 		 speedX = -speedX*SURFACE_HARDNESS;
@@ -112,17 +116,24 @@ void Object::checkCollision()
 	if ( posY >= SCREEN_HEIGHT-SIZE_AWESOME )
 	{
 		
-		if( !grounded )
-		{ 
-			speedX = 0.0;
-			grounded = true;
-		}
+		// If in-air release lock
+		// First time hitting ground -> Set X speed to 0.
+		// Next time, do not run this
 		
 		if( speedY >= 0.0)
 		{
 		speedY = 0.0;
 		posY = SCREEN_HEIGHT-SIZE_AWESOME;
+			
 		}
+		
+		if ( !stopped )
+		{
+		speedX = 0.0;
+		stopped = true;
+		}
+		
+		
 	}
 	else if ( posY <= 0 )
 	{ 
@@ -168,7 +179,9 @@ if( SDL_PollEvent( &event ) )
 			switch( event.key.keysym.sym )
 			{
 				case SDLK_UP: 
+					if( posY == SCREEN_HEIGHT-SIZE_AWESOME ) 
 					speedY = -500.0;
+					
 					
 					break;
 				case SDLK_LEFT:
