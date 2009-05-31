@@ -2,12 +2,15 @@
 
 = General =
 
-Content
+*Genre:* 2D sidescrolling platformer
+*Engine:* SDL
+*Written in:* C++
 
 
-= Details =
+= Gameplay =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+*Main Gameplay*
+
+The player takes control of a character, which is a black silhouette of a man. This character can only move on the black surface, and are always under timepressure, because after (x) seconds, the black ground will engulf the player, leading to death. Also, standing still for way to long on the black surface will also engulf the character. To avoid being dragged down into the black surface, the player must collect some sort of powerups/items.
+
+_Keyword; The black surface will be the source of life, and death._
