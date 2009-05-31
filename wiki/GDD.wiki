@@ -1,7 +1,7 @@
 #summary Game Design Document, by Nev3ra, for all participants to edit freely.
 #sidebar TableOfContents
 
-* [GDD Gameplay]
+* [GDD#Gameplay Gameplay]
     * [GDD Main Gameplay]
     * [ArticlesDom DOM manipulation]
     * [ArticlesStyle CSS and style]
