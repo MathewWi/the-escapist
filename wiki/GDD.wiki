@@ -18,6 +18,7 @@
     * [GDD#A_world_in_layers A World in Layers]
     * [GDD#Character_animation Character Animation]
 * [GDD#Media Media]
+    * [GDD#Concept Concept]
     * [GDD#Pre-Alpha Pre-Alpha]
     * [GDD#Alpha Alpha]
     * [GDD#Beta Beta]
@@ -117,9 +118,13 @@ Inspiration for the animations is taken from Prince of Persia for the NES. Take 
 
 Heres a collection of images, video etc, related to the project. Also interesting to see how the project evolves.
 
-==Pre-Alpha==
+==Concept==
 
 http://i44.tinypic.com/23idzsz.jpg
+
+==Pre-Alpha==
+
+--
 
 ==Alpha==
 
