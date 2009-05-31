@@ -8,7 +8,7 @@ TARGET=the-escapist
 all: $(TARGET)
 
 clean:   
-	rm $(TARGET) $(SOURCES)
+	rm $(TARGET)
 
 $(TARGET): $(OBJECTS) 
 	$(CPP) $(CXXFLAGS) $(SOURCES) -o $(TARGET) $(LDFLAGS)
