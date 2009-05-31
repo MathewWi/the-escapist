@@ -17,6 +17,8 @@
     * [GDD#A_world_in_layers A World in Layers]
     * [GDD#Character_animation Character Animation]
 
+----
+
 = General =
 
 *Genre:* 2D sidescrolling platformer
