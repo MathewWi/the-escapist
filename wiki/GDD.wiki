@@ -1,6 +1,7 @@
 #summary Game Design Document, by Nev3ra, for all participants to edit freely.
 #sidebar TableOfContents
 
+<wiki:toc max_depth="1" />
 * [GDD#Gameplay Gameplay]
     * [GDD#Main_Gameplay Main Gameplay]
     * [GDD#Hectical_Gameplay Hectical Gameplay]
