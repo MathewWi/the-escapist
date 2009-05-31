@@ -2,6 +2,7 @@
 #sidebar TableOfContents
 
 * [GDD#General_Info General Info]
+
 * [GDD#Gameplay Gameplay]
     * [GDD#Main_Gameplay Main Gameplay]
     * [GDD#Hectical_Gameplay Hectical Gameplay]
