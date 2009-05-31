@@ -1,7 +1,7 @@
 #summary Game Design Document, by Nev3ra, for all participants to edit freely.
 #sidebar TableOfContents
 
-
+* [GDD#General_Info General Info]
 * [GDD#Gameplay Gameplay]
     * [GDD#Main_Gameplay Main Gameplay]
     * [GDD#Hectical_Gameplay Hectical Gameplay]
@@ -19,7 +19,7 @@
 
 ----
 
-= General =
+= General Info =
 
 *Genre:* 2D sidescrolling platformer
 
