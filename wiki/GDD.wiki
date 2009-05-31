@@ -5,7 +5,7 @@
     * [GDD#Main_Gameplay Main Gameplay]
     * [GDD#Hectical_Gameplay Hectical Gameplay]
     * [GDD#Character_evolving_over_time Character Evolving over time]
-    * [GDD#Replay_worthiness Replay Worthiness]
+    * [GDD#Replay Worthiness Replay Worthiness]
     * [GDD#Balance Balance]
     * [GDD#Art Art]
     * [GDD#Checkpoints Checkpoints]
