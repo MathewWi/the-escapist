@@ -3,9 +3,18 @@
 
 * [GDD#Gameplay Gameplay]
     * [GDD#Main_Gameplay Main Gameplay]
-    * [ArticlesDom DOM manipulation]
-    * [ArticlesStyle CSS and style]
-    * [ArticlesTips Tips and tricks]
+    * [GDD#Hectical_Gameplay Hectical Gameplay]
+    * [GDD#Character_evolving_over_time Character Evolving over time]
+    * [GDD#Replay_worthiness Replay Worthiness]
+    * [GDD#Balance Balance]
+    * [GDD#Art Art]
+    * [GDD#Checkpoints Checkpoints]
+* [GDD#Story Story]
+    * [GDD#Central_element Central element]
+    * [GDD#Chapters/levels Chapters/Levels]
+* [GDD#Technical_in-debth_info Technical In-debth info]
+    * [GDD#A_world_in_layers A World in Layers]
+    * [GDD#Character_animation Character Animation]
 
 = General =
 
@@ -78,26 +87,6 @@ The levels will be divided up in Acts. For example, "Act I - Nameofact".
 The world of this 2D game will be built in layers. To be exact, a total of 9 layers, where 5 of them is "Enviromental layers", and 3 "base layers"; the ground the player walk on, and two layers for bushes/vegetation/misc objects in fron and behind the ground layer. The last layer is dedicated to the character.
 
 Example; LINK
-
-|-Animasjon av karakter
-|-
-|-> [?] Her må vi snakke sammen i real time.. :P Men kom opp med en liten ide, etter litt
-|logisk tenking;
-|
-|Dele animasjon opp i flere sprites, hvor hver sprite er hele karakteren. Blir som frames
-|i filmer. Eks; (..excuse my wannabeprogrammin' setupz)
-|
-|Speed range = 0-2
-|
-|if_speed = 0 - loop av stå-stille-animasjon (et par frames)
-|if_speed = 1 - mellomting fra stående til gående, 0,5 sec varighet (for å ikke få en brå overgang)
-|if_speed = 2 - loop av løpende animasjon, mens objektet selv beveger seg til høyre/venstre
-|
-|For å bremse igjen (slipper fks høyre piltast) går det i reverse, bare en slightly
-|modifisert "speed = 1" (Mellomtingen).
-|
-|Inspirasjonen kommer fra Prince of Persia til NES. 
-|Ta en titt; http://www.youtube.com/watch?v=Cojo21zLd0Y
 
 ==Character animation==
 
