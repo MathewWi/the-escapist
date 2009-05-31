@@ -3,7 +3,9 @@
 = General =
 
 *Genre:* 2D sidescrolling platformer
+
 *Engine:* SDL
+
 *Written in:* C++
 
 
@@ -13,4 +15,9 @@
 
 The player takes control of a character, which is a black silhouette of a man. This character can only move on the black surface, and are always under timepressure, because after (x) seconds, the black ground will engulf the player, leading to death. Also, standing still for way to long on the black surface will also engulf the character. To avoid being dragged down into the black surface, the player must collect some sort of powerups/items.
 
-_Keyword; The black surface will be the source of life, and death._
+_*Keyword;*_ The black surface will be the source of life, and death.
+
+
+_Additional alternatives
+
+As said, the player can only move on the black surface. But, this wont be everywhere (though mostly everywhere). So, a skill to kind of splutter the black surface material to the ground where its not possible to move, could be an alternative. This would add varation to the game, as the player dont have unlimitied "ammo", so plans and preserving of the ammo available is crucial._
