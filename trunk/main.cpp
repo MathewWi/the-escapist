@@ -19,8 +19,8 @@ int main(int argc, char* argv[])
 	
 	//SDL_Surface *surface = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_HWSURFACE | SDL_DOUBLEBUF);
 	SDL_Surface *surface = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_SWSURFACE);
-	SDL_Surface *awesomeTemp = load_image("awesome.png");
-	SDL_Surface *sadfaceTemp = load_image("sadface.png");
+	SDL_Surface *awesomeTemp = load_image("Data/Sprites/awesome.png");
+	SDL_Surface *sadfaceTemp = load_image("Data/Sprites/sadface.png");
 	
 	unsigned int mycolor = SDL_MapRGB(surface->format, 20, 20, 140);
 	
