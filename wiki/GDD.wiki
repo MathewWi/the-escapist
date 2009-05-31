@@ -5,13 +5,13 @@
     * [GDD#Main_Gameplay Main Gameplay]
     * [GDD#Hectical_Gameplay Hectical Gameplay]
     * [GDD#Character_evolving_over_time Character Evolving over time]
-    * [GDD#Replay Worthiness Replay Worthiness]
+    * [GDD#Replay_Worthiness Replay Worthiness]
     * [GDD#Balance Balance]
     * [GDD#Art Art]
     * [GDD#Checkpoints Checkpoints]
 * [GDD#Story Story]
-    * [GDD#Central_element Central element]
-    * [GDD#Chapters/levels Chapters/Levels]
+    * [GDD#Central_Element Central element]
+    * [GDD#Chapters_and_Levels Chapters and Levels]
 * [GDD#Technical_in-debth_info Technical In-debth info]
     * [GDD#A_world_in_layers A World in Layers]
     * [GDD#Character_animation Character Animation]
@@ -76,7 +76,7 @@ The thing about not being able to walk on the black, thick, "liquidish" surface,
 
 _*Keyword;*_ The black surface will be the source of life, and death.
 
-==Chapters/Levels==
+==Chapters and Levels==
 
 The levels will be divided up in Acts. For example, "Act I - Nameofact".
 
