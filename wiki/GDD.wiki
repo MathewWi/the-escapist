@@ -1,7 +1,7 @@
 #summary Game Design Document, by Nev3ra, for all participants to edit freely.
 #sidebar TableOfContents
 
-<wiki:toc max_depth="1" />
+
 * [GDD#Gameplay Gameplay]
     * [GDD#Main_Gameplay Main Gameplay]
     * [GDD#Hectical_Gameplay Hectical Gameplay]
@@ -102,3 +102,5 @@ To go from running to standing (2->0), the concept above reverse, only with a mo
 Inspiration for the animations is taken from Prince of Persia for the NES. Take a look; 
 
 [http://www.youtube.com/watch?v=Cojo21zLd0Y Prince of Persia NES].
+
+<wiki:toc max_depth="1" />
