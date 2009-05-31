@@ -1,23 +1,109 @@
-#Game Design Document
+#summary Game Design Document, by Nev3ra, for all participants to edit freely.
+
+----
 
 = General =
 
 *Genre:* 2D sidescrolling platformer
 
-*Engine:* SDL
+*Developed by:* "./glhf Game Studios"
+
+*Codename:* 2DASP
 
 *Written in:* C++
 
+----
 
 = Gameplay =
 
-*Main Gameplay*
+==Main Gameplay==
 
 The player takes control of a character, which is a black silhouette of a man. This character can only move on the black surface, and are always under timepressure, because after (x) seconds, the black ground will engulf the player, leading to death. Also, standing still for way to long on the black surface will also engulf the character. To avoid being dragged down into the black surface, the player must collect some sort of powerups/items.
 
 _*Keyword;*_ The black surface will be the source of life, and death.
 
 
-_Additional alternatives
+_Additional alternatives_
 
-As said, the player can only move on the black surface. But, this wont be everywhere (though mostly everywhere). So, a skill to kind of splutter the black surface material to the ground where its not possible to move, could be an alternative. This would add varation to the game, as the player dont have unlimitied "ammo", so plans and preserving of the ammo available is crucial._
+_As said, the player can only move on the black surface. But, this wont be everywhere (though mostly everywhere). So, a skill to kind of splutter the black surface material to the ground where its not possible to move, could be an alternative. This would add varation to the game, as the player dont have unlimitied "ammo", so plans and preserving of the ammo available is crucial._
+
+==Hectical Gameplay==
+
+Tha goal is do create a little hectical gameplay, where the player have to focus, and not just go through the game on "autopilot". The player must be kept interested at all times, and push the player into our world. Breaks will also occur (Pause from the "engulfing ground"), where the player may relax for as long as he wants. If the whole level would be under intense timepressure, it would get to stressful.
+
+==Character evolving over time==
+
+The character evolves over time? (Magic, skills, ..attributes?)
+
+==Replay Worthiness==
+
+_"You only play until you have mastered the pattern"_ - Must be more to do than just to finish the game. Replay worthiness. Exploring? Should be possible, and it should pay - but may not change the overall gameplay. Bold example; End of level - "You missed x of x secrets", then some sort of reward. Timeattack mode could also be added. After the game is finished for the first time, the player may try it.
+
+==Balance==
+
+"Real fun comes from challenges that are always at the margin of our ability" 
+
+==Art==
+
+The aim is also to portrait the game as a piece of art. Puzzles with more than one correct answer, that the player can interpret the way he wants. Though, the story must not end up being untidy or unclear.
+
+
+==Checkpoints==
+
+Dying, and then needing to do way to much all over again belongs to the early 90's. In this game we want plenty of checkpoints, as it is a positive thing, and keeps the game flowing. It also has to be possible to spawn from last checkpoint whenever the player wants to, for example if he wasted the "ammo" for the black surface, etc.
+
+----
+
+=Story=
+
+==Central Element==
+
+The thing about not being able to walk on the black, thick, "liquidish" surface, and that it may kill you, will have a big role when it comes to the story. Same goes with evolving the character over time.
+
+_*Keyword;*_ The black surface will be the source of life, and death.
+
+==Chapters/Levels==
+
+The levels will be divided up in Acts. For example, "Act I - Nameofact".
+
+=Technical In-debth info=
+
+==A world in layers==
+
+The world of this 2D game will be built in layers. To be exact, a total of 9 layers, where 5 of them is "Enviromental layers", and 3 "base layers"; the ground the player walk on, and two layers for bushes/vegetation/misc objects in fron and behind the ground layer. The last layer is dedicated to the character.
+
+Example; LINK
+
+|-Animasjon av karakter
+|-
+|-> [?] Her må vi snakke sammen i real time.. :P Men kom opp med en liten ide, etter litt
+|logisk tenking;
+|
+|Dele animasjon opp i flere sprites, hvor hver sprite er hele karakteren. Blir som frames
+|i filmer. Eks; (..excuse my wannabeprogrammin' setupz)
+|
+|Speed range = 0-2
+|
+|if_speed = 0 - loop av stå-stille-animasjon (et par frames)
+|if_speed = 1 - mellomting fra stående til gående, 0,5 sec varighet (for å ikke få en brå overgang)
+|if_speed = 2 - loop av løpende animasjon, mens objektet selv beveger seg til høyre/venstre
+|
+|For å bremse igjen (slipper fks høyre piltast) går det i reverse, bare en slightly
+|modifisert "speed = 1" (Mellomtingen).
+|
+|Inspirasjonen kommer fra Prince of Persia til NES. 
+|Ta en titt; http://www.youtube.com/watch?v=Cojo21zLd0Y
+
+==Character animation==
+
+The animation could be divided up in several sprites, where one sprite is the whole character. Kind of like frames in movies. An example;
+
+if speed = 0 - Loop of standing-still-animation (a few frames)
+if speed = 1 - middle animation from standing, to running animation. ca 0,5 sec length.
+if speed = 2 - Loop of running animation, while the object itself moves to the right/left.
+
+To go from running to standing (2->0), the concept above reverse, only with a modified "if speed = 1.
+
+Inspiration for the animations is taken from Prince of Persia for the NES. Take a look; 
+
+[http://www.youtube.com/watch?v=Cojo21zLd0Y Prince of Persia NES].
