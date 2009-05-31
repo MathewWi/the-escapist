@@ -2,7 +2,7 @@
 #sidebar TableOfContents
 
 * [GDD#Gameplay Gameplay]
-    * [GDD Main Gameplay]
+    * [GDD#Main_Gameplay Main Gameplay]
     * [ArticlesDom DOM manipulation]
     * [ArticlesStyle CSS and style]
     * [ArticlesTips Tips and tricks]
