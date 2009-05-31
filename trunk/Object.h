@@ -30,9 +30,12 @@ protected:
 	float speedX;
 	float speedY;
 	
+	
 public:
+    bool grounded;
 	SDL_Surface **awesome;
 	SDL_Surface **sadface;
+	SDL_Event event;
 	Object();
 	~Object();
     Object(int, int, float, float);
@@ -50,4 +53,5 @@ public:
 	void checkCollision();
 	void blit(SDL_Surface*);
 	void updateCo(int, float);
+	bool handleInput();
 };

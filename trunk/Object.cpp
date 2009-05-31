@@ -24,6 +24,7 @@ Object::Object(int x, int y, float s_x, float s_y)
 	posY = y;
 	speedX = s_x;
 	speedY = s_y;
+	grounded = false;
 	
 }
 
@@ -31,6 +32,7 @@ Object::Object()
 {
 	speedX = 10;
 	speedY = 10;
+	grounded = false;
 	
 }
 
@@ -102,19 +104,27 @@ void Object::checkCollision()
 		 posX = SCREEN_WIDTH-SIZE_AWESOME;
 		 
 	}
-	if ( posY >= SCREEN_HEIGHT-SIZE_AWESOME )
-	{
-		speedY = -speedY*SURFACE_HARDNESS;
-		posY = SCREEN_HEIGHT-SIZE_AWESOME;
-		
-	}
-	if ( posX <= 0 )
+	else if ( posX <= 0 )
 	{
 		speedX = -speedX*SURFACE_HARDNESS;
 		posX = 0;
-		
 	}
-	if ( posY <= 0 )
+	if ( posY >= SCREEN_HEIGHT-SIZE_AWESOME )
+	{
+		
+		if( !grounded )
+		{ 
+			speedX = 0.0;
+			grounded = true;
+		}
+		
+		if( speedY >= 0.0)
+		{
+		speedY = 0.0;
+		posY = SCREEN_HEIGHT-SIZE_AWESOME;
+		}
+	}
+	else if ( posY <= 0 )
 	{ 
 		speedY = -speedY*SURFACE_HARDNESS;
 		posY = 0;
@@ -142,4 +152,60 @@ void Object::updateCo(int ticks, float force)
 	speedY += (float)ticks*(GRAVITY_CONS+force)/1000;
 }
 
+
+
+bool Object::handleInput()
+{
 	
+if( SDL_PollEvent( &event ) )
+{
+		
+	
+   if (event.type == SDL_QUIT) return false;
+		
+    else if (event.type == SDL_KEYDOWN)
+		{
+			switch( event.key.keysym.sym )
+			{
+				case SDLK_UP: 
+					speedY = -500.0;
+					
+					break;
+				case SDLK_LEFT:
+					speedX = -500.0;
+					if( posY < SCREEN_HEIGHT-SIZE_AWESOME ) speedX = speedX/2;
+					break;
+				case SDLK_RIGHT:
+					speedX = 500.0;
+					if( posY < SCREEN_HEIGHT-SIZE_AWESOME ) speedX = speedX/2;
+					break;
+				
+				default: break;
+			}
+		}
+	else if (event.type == SDL_KEYUP)
+		{
+			switch( event.key.keysym.sym )
+			{
+				case SDLK_LEFT:
+					if( posY < SCREEN_HEIGHT-SIZE_AWESOME )
+					{
+						speedX = speedX/2;
+					}
+					else speedX = 0;
+				break;
+				
+				case SDLK_RIGHT:
+					if( posY < SCREEN_HEIGHT-SIZE_AWESOME )
+						{
+							speedX = speedX/2;
+						}
+						else speedX = 0;
+				break;
+				default: break;
+			}
+		}
+
+}
+	return true;
+}	
