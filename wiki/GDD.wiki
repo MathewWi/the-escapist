@@ -18,9 +18,10 @@
     * [GDD#A_world_in_layers A World in Layers]
     * [GDD#Character_animation Character Animation]
 * [GDD#Media Media]
-    * [GDD#Concept Concept]
+    * [GDD#Pre-Alpha Pre-Alpha]
     * [GDD#Alpha Alpha]
     * [GDD#Beta Beta]
+    * [GDD#Release_Candidate Release Candidate]
 
 
 ----
@@ -110,11 +111,13 @@ To go from running to standing (2->0), the concept above reverse, only with a mo
 
 Inspiration for the animations is taken from Prince of Persia for the NES. Take a look[http://www.youtube.com/watch?v=Cojo21zLd0Y Prince of Persia NES].
 
+----
+
 =Media=
 
-Heres a collection of images, video etc, related to the project.
+Heres a collection of images, video etc, related to the project. Also interesting to see how the project evolves.
 
-==Concept==
+==Pre-Alpha==
 
 http://i44.tinypic.com/23idzsz.jpg
 
@@ -123,5 +126,9 @@ http://i44.tinypic.com/23idzsz.jpg
 --
 
 ==Beta==
+
+--
+
+==Release Candidate==
 
 --
