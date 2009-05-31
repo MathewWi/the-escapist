@@ -116,10 +116,6 @@ void Object::checkCollision()
 	if ( posY >= SCREEN_HEIGHT-SIZE_AWESOME )
 	{
 		
-		// If in-air release lock
-		// First time hitting ground -> Set X speed to 0.
-		// Next time, do not run this
-		
 		if( speedY >= 0.0)
 		{
 		speedY = 0.0;
@@ -129,8 +125,12 @@ void Object::checkCollision()
 		
 		if ( !stopped )
 		{
-		speedX = 0.0;
-		stopped = true;
+			Uint8 *keystates = SDL_GetKeyState( NULL );
+			if( !keystates[ SDLK_LEFT ] && !keystates[ SDLK_RIGHT ])
+			{ 
+				speedX = 0.0;
+				stopped = true;
+			}
 		}
 		
 		
@@ -180,7 +180,7 @@ if( SDL_PollEvent( &event ) )
 			{
 				case SDLK_UP: 
 					if( posY == SCREEN_HEIGHT-SIZE_AWESOME ) 
-					speedY = -500.0;
+					speedY = -600.0;
 					
 					
 					break;
