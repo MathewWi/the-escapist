@@ -24,7 +24,7 @@
 
 *Genre:* 2D sidescrolling platformer
 
-*Developed by:* "./glhf Game Studios"
+*Developed by:* "./GLHF Game Studios"
 
 *Codename:* 2DASP
 
@@ -102,6 +102,4 @@ if speed = 2 - Loop of running animation, while the object itself moves to the r
 
 To go from running to standing (2->0), the concept above reverse, only with a modified "if speed = 1.
 
-Inspiration for the animations is taken from Prince of Persia for the NES. Take a look; 
-
-[http://www.youtube.com/watch?v=Cojo21zLd0Y Prince of Persia NES].
+Inspiration for the animations is taken from Prince of Persia for the NES. Take a look[http://www.youtube.com/watch?v=Cojo21zLd0Y Prince of Persia NES].
