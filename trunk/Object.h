@@ -33,6 +33,7 @@ protected:
 	
 public:
     bool grounded;
+	bool stopped;
 	SDL_Surface **awesome;
 	SDL_Surface **sadface;
 	SDL_Event event;

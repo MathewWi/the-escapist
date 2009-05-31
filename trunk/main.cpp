@@ -78,6 +78,7 @@ while (running)
 		fpsCounter->reset();
 		SDL_FillRect(surface, &surface->clip_rect, mycolor);
 		
+			
 			awesome->checkCollision();
 			awesome->updateCo(mainTimer->getTicks(), force);
 			awesome->blit(surface);
