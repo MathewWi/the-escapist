@@ -31,3 +31,5 @@ SDL_Surface* load_files(std::string);
 void clean_up(SDL_Surface*);
 
 void updateCaption(int, int);
+
+void apply_surface( int x, int y, SDL_Surface*, SDL_Surface*, SDL_Rect );

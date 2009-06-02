@@ -23,23 +23,9 @@ SDL_Surface* load_image(std::string file)
 {
 	SDL_Surface *loadedImage = NULL;
 	loadedImage = IMG_Load(file.c_str());
-/*	SDL_Surface *optimizedImage = NULL;
-	if (loadedImage != NULL){
-		optimizedImage = SDL_DisplayFormat(loadedImage);
-		
-		SDL_FreeSurface(loadedImage);
-		
-		if (optimizedImage != NULL)
-		{
-		return optimizedImage;
-		}
-		else return NULL;
-	
-	}
-	
-	
-	return NULL;*/
-return loadedImage;
+
+    if( loadedImage != NULL) return loadedImage;
+	else return NULL;
 }
 
 bool init(std::string caption)
@@ -80,5 +66,13 @@ void updateCaption(int frames, int ticks)
 	screen << "FPS: " << fps << "  ||  " << "Frames: " << frames << "  ||  " << "MS: " << ticks;
 	
 	SDL_WM_SetCaption((screen.str()).c_str(), NULL);
+}
+
+void apply_surface( int x, int y, SDL_Surface* source, SDL_Surface* destination, SDL_Rect spriteOffset )
+{
+	SDL_Rect offset;
+	offset.x = x;
+	offset.y = y;
+	SDL_BlitSurface( source, &spriteOffset, destination, &offset );
 }
 

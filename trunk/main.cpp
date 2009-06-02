@@ -24,6 +24,27 @@
 #include "Object.h"
 #include "main.h"
 
+
+void blitBackdrop(SDL_Surface* backdrop, SDL_Surface* screen, MainChar mainchar)
+{
+	SDL_Rect cutout;
+	cutout.x = mainchar.getX() - SCREEN_WIDTH/2;
+	if( cutout.x < 0) cutout.x = 0;
+	cutout.y = mainchar.getY() - SCREEN_WIDTH/2;
+	if ( cutout.y < 0) cutout.y = 0;
+	cutout.w = SCREEN_WIDTH;
+	cutout.h = SCREEN_HEIGHT;
+	int x,y;
+	x = 0;
+	y = 0;
+	
+	apply_surface(x, y, backdrop, screen, cutout);
+	
+}
+
+
+
+
 int main(int argc, char* argv[])
 {
 	Timer *mainTimer = new Timer();
@@ -38,25 +59,26 @@ int main(int argc, char* argv[])
 	
 	init("Init"); 
 	
-	//SDL_Surface *surface = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_HWSURFACE | SDL_DOUBLEBUF);
 	SDL_Surface *surface = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_SWSURFACE);
-	SDL_Surface *awesomeTemp = load_image("Data/Sprites/awesome.png");
-	SDL_Surface *sadfaceTemp = load_image("Data/Sprites/sadface.png");
+	SDL_Surface *mainChar_Sprite = load_image("Data/Sprites/awesome.png");
+	SDL_Surface *backdrop = load_image("Data/Backdrops/test_skybox.png");
+	SDL_Surface *floor = load_image("Data/Backdrops/test_ground.PNG");
+	SDL_Surface *platforms = load_image("Data/Backdrops/test_platforms.png");
 	
-	unsigned int mycolor = SDL_MapRGB(surface->format, 20, 20, 20);
+	//unsigned int mycolor = SDL_MapRGB(surface->format, 20, 20, 20);
 	
 	srand((unsigned)time(0));
 	
-	Object *awesome = new Object();
+	MainChar *mainChar = new MainChar();
 	
-		 awesome->awesome = &awesomeTemp;
-		 awesome->sadface = &sadfaceTemp;
-		 awesome->setX(rand()%(SCREEN_WIDTH-SIZE_AWESOME));
-		 awesome->setY(rand()%(SCREEN_HEIGHT-SIZE_AWESOME));
-		 awesome->setSpeedX(float(rand()%MAX_SPEED));
-			if(rand()%2 == 1) awesome->setSpeedX(-awesome->getSpeedX());
-		 awesome->setSpeedY(float(rand()%MAX_SPEED));
-			if(rand()%2 == 1) awesome->setSpeedY(-awesome->getSpeedY());
+		 mainChar->charSprite = &mainChar_Sprite;
+		 
+		 mainChar->setX(rand()%(SCREEN_WIDTH-SIZE_AWESOME));
+		 mainChar->setY(rand()%(SCREEN_HEIGHT-SIZE_AWESOME));
+		 mainChar->setSpeedX(float(rand()%MAX_SPEED));
+			if(rand()%2 == 1) mainChar->setSpeedX(-mainChar->getSpeedX());
+		 mainChar->setSpeedY(float(rand()%MAX_SPEED));
+			if(rand()%2 == 1) mainChar->setSpeedY(-mainChar->getSpeedY());
 	 
 
 
@@ -71,17 +93,19 @@ int main(int argc, char* argv[])
 while (running)
 {
 	
-	if (!awesome->handleInput()) running = false;
+	if (!mainChar->handleInput()) running = false;
 	
 	if ( fpsCounter->getTicks() >= 1000/FPS_CAP )
 	{
 		fpsCounter->reset();
-		SDL_FillRect(surface, &surface->clip_rect, mycolor);
+		//SDL_FillRect(surface, &surface->clip_rect, mycolor);
+		
+		blitBackdrop(backdrop, surface, *mainChar);
 		
 			
-			awesome->checkCollision();
-			awesome->updateCo(mainTimer->getTicks(), force);
-			awesome->blit(surface);
+			mainChar->checkCollision();
+			mainChar->updateCo(mainTimer->getTicks(), force);
+			mainChar->blit(surface);
 			
 			
 		
@@ -100,11 +124,15 @@ while (running)
 	delete mainTimer;
 	delete framecounter;
 	delete fpsCounter;	
-	delete awesome;
+	delete mainChar;
+	
 	
 	clean_up(surface);
-	clean_up(awesomeTemp);
-	clean_up(sadfaceTemp);
+	clean_up(mainChar_Sprite);
+	clean_up(backdrop);
+	clean_up(floor);
+	clean_up(platforms);
+	
 	SDL_Quit();
 	
 	return 0;
