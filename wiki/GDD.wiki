@@ -1,4 +1,5 @@
 #summary Game Design Document, by Nev3ra, for all participants to edit freely.
+#labels Featured,Phase-Design
 #sidebar TableOfContents
 
 * [GDD#General_Info General Info]
