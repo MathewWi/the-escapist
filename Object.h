@@ -22,7 +22,7 @@
 #include "main.h"
 
 
-class Object
+class MainChar
 {
 protected:
 	float posX;
@@ -34,12 +34,13 @@ protected:
 public:
     bool grounded;
 	bool stopped;
-	SDL_Surface **awesome;
-	SDL_Surface **sadface;
+	SDL_Surface **charSprite;
+	SDL_Rect *animationBounds;
+	SDL_Rect *collitionAreas;
 	SDL_Event event;
-	Object();
-	~Object();
-    Object(int, int, float, float);
+	MainChar();
+	~MainChar();
+    MainChar(int, int, float, float);
 	float getSpeedX();
 	float getSpeedY();
 	int getX();

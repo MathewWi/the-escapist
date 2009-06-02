@@ -18,7 +18,7 @@
 
 #include "Object.h"
 
-Object::Object(int x, int y, float s_x, float s_y)
+MainChar::MainChar(int x, int y, float s_x, float s_y)
 {
 	posX = x;
 	posY = y;
@@ -29,7 +29,7 @@ Object::Object(int x, int y, float s_x, float s_y)
 	
 }
 
-Object::Object()
+MainChar::MainChar()
 {
 	speedX = 10;
 	speedY = 10;
@@ -38,67 +38,67 @@ Object::Object()
 	
 }
 
-float Object::getSpeedX()
+float MainChar::getSpeedX()
 {
 	return speedX;
 }
 
-float Object::getSpeedY()
+float MainChar::getSpeedY()
 {
 	return speedY;
 }
 
-int Object::getX()
+int MainChar::getX()
 {
 	return (int)posX;
 }
 
-int Object::getY()
+int MainChar::getY()
 {
 	return (int)posY;
 }
 
-void Object::setX(int x)
+void MainChar::setX(int x)
 {
 	posX = (float)x;
 }
 
-void Object::setY(int y)
+void MainChar::setY(int y)
 {
 	posY = (float)y;
 }
 
-void Object::changeSpeedX(float x)
+void MainChar::changeSpeedX(float x)
 {
 	speedX = x;
 }
 
-void Object::changeSpeedY(float y)
+void MainChar::changeSpeedY(float y)
 {
 	speedY = y;
 }
 
-void Object::setSpeedX(float x)
+void MainChar::setSpeedX(float x)
 {
 	speedX = x;
 }
 
-void Object::setSpeedY(float y)
+void MainChar::setSpeedY(float y)
 {
 	speedY = y;
 }
 
-void Object::blit(SDL_Surface *screen)
+void MainChar::blit(SDL_Surface *screen)
 {
 	
 	SDL_Rect offset;
 	offset.x = (int)posX;
 	offset.y = (int)posY;
-	if( speedY >= 0 ) SDL_BlitSurface( *sadface, NULL, screen, &offset );
-	else SDL_BlitSurface( *awesome, NULL, screen, &offset );
+	
+	SDL_BlitSurface( *charSprite, NULL, screen, &offset );
 }
 
-void Object::checkCollision()
+void MainChar::checkCollision()
 {
 	if( posY < SCREEN_HEIGHT-SIZE_AWESOME ) stopped = false;
 	
@@ -144,12 +144,12 @@ void Object::checkCollision()
 }
 
 
-Object::~Object()
+MainChar::~MainChar()
 {
 	
 }
 
-void Object::updateCo(int ticks, float force)
+void MainChar::updateCo(int ticks, float force)
 {
 	posX += speedX * (float)ticks/1000;
 	posY += speedY * (float)ticks/1000;
@@ -165,7 +165,7 @@ void Object::updateCo(int ticks, float force)
 
 
 
-bool Object::handleInput()
+bool MainChar::handleInput()
 {
 	
 if( SDL_PollEvent( &event ) )
