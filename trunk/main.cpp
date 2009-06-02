@@ -28,10 +28,12 @@
 void blitBackdrop(SDL_Surface* backdrop, SDL_Surface* screen, MainChar mainchar)
 {
 	SDL_Rect cutout;
-	cutout.x = mainchar.getX() - SCREEN_WIDTH/2;
+	cutout.x = mainchar.getX() + SIZE_MAINCHAR/2 - SCREEN_WIDTH/2;
 	if( cutout.x < 0) cutout.x = 0;
-	cutout.y = mainchar.getY() - SCREEN_WIDTH/2;
+	else if ( cutout.x + SCREEN_WIDTH > MAP_WIDTH ) cutout.x = MAP_WIDTH - SCREEN_WIDTH;
+	cutout.y = mainchar.getY() + SIZE_MAINCHAR/2 - SCREEN_WIDTH/2;
 	if ( cutout.y < 0) cutout.y = 0;
+	else if ( cutout.y + SCREEN_HEIGHT > MAP_HEIGHT ) cutout.y = MAP_HEIGHT - SCREEN_HEIGHT;
 	cutout.w = SCREEN_WIDTH;
 	cutout.h = SCREEN_HEIGHT;
 	int x,y;
@@ -62,8 +64,8 @@ int main(int argc, char* argv[])
 	SDL_Surface *surface = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_SWSURFACE);
 	SDL_Surface *mainChar_Sprite = load_image("Data/Sprites/awesome.png");
 	SDL_Surface *backdrop = load_image("Data/Backdrops/test_skybox.png");
-	SDL_Surface *floor = load_image("Data/Backdrops/test_ground.PNG");
-	SDL_Surface *platforms = load_image("Data/Backdrops/test_platforms.png");
+	//SDL_Surface *floor = load_image("Data/Backdrops/test_ground.PNG");
+	//SDL_Surface *platforms = load_image("Data/Backdrops/test_platforms.png");
 	
 	//unsigned int mycolor = SDL_MapRGB(surface->format, 20, 20, 20);
 	
@@ -130,8 +132,8 @@ while (running)
 	clean_up(surface);
 	clean_up(mainChar_Sprite);
 	clean_up(backdrop);
-	clean_up(floor);
-	clean_up(platforms);
+	//clean_up(floor);
+	//clean_up(platforms);
 	
 	SDL_Quit();
 	
