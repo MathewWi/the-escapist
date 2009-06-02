@@ -92,34 +92,34 @@ void MainChar::blit(SDL_Surface *screen)
 {
 	
 	SDL_Rect offset;
-	offset.x = (int)posX;
-	offset.y = (int)posY;
+	offset.x = (int)posX + offsetX;
+	offset.y = (int)posY + offsetY;
 	
 	SDL_BlitSurface( *charSprite, NULL, screen, &offset );
 }
 
 void MainChar::checkCollision()
 {
-	if( posY < SCREEN_HEIGHT-SIZE_MAINCHAR ) stopped = false;
+	if( (int)posY < MAP_HEIGHT-SIZE_MAINCHAR ) stopped = false;
 	
-	if ( posX >= SCREEN_WIDTH-SIZE_MAINCHAR )
+	if ( (int)posX >= MAP_WIDTH-SIZE_MAINCHAR )
 	{
 		 speedX = -speedX*SURFACE_HARDNESS_WALL;
-		 posX = SCREEN_WIDTH-SIZE_MAINCHAR;
+		 posX = MAP_WIDTH-SIZE_MAINCHAR;
 		 
 	}
 	else if ( posX <= 0 )
 	{
 		speedX = -speedX*SURFACE_HARDNESS_WALL;
-		posX = 0;
+		posX = 0.0;
 	}
-	if ( posY >= SCREEN_HEIGHT-SIZE_MAINCHAR )
+	if ( (int)posY >= MAP_HEIGHT-SIZE_MAINCHAR )
 	{
 		
 		if( speedY >= 0.0)
 		{
 		speedY = 0.0;
-		posY = SCREEN_HEIGHT-SIZE_MAINCHAR;
+		posY = MAP_HEIGHT-SIZE_MAINCHAR;
 			
 		}
 		
@@ -135,7 +135,7 @@ void MainChar::checkCollision()
 		
 		
 	}
-	else if ( posY <= 0 )
+	else if ( (int)posY <= 0 )
 	{ 
 		speedY = -speedY*SURFACE_HARDNESS_GROUND;
 		posY = 0;
@@ -151,16 +151,28 @@ MainChar::~MainChar()
 
 void MainChar::updateCo(int ticks, float force)
 {
+	
 	posX += speedX * (float)ticks/1000;
 	posY += speedY * (float)ticks/1000;
-	if (posX > SCREEN_WIDTH-SIZE_MAINCHAR) posX = SCREEN_WIDTH-SIZE_MAINCHAR;
+	if (posX > MAP_WIDTH-SIZE_MAINCHAR) posX = MAP_WIDTH-SIZE_MAINCHAR;
 	else if (posX < 0) posX = 0;
 
-	if (posY > SCREEN_HEIGHT-SIZE_MAINCHAR) posY = SCREEN_HEIGHT-SIZE_MAINCHAR;
+	if (posY > MAP_HEIGHT-SIZE_MAINCHAR) posY = MAP_HEIGHT-SIZE_MAINCHAR;
 	else if (posY < 0) posY = 0;
 	//posX += 1;
 	//posY += 1;
 	speedY += (float)ticks*(GRAVITY_CONS+force)/1000;
+	
+	
+	//FIX THIS SHIT OMFG :'D
+	offsetX = SCREEN_WIDTH/2 - (int)posX - SIZE_MAINCHAR/2;
+	if ( (int)posX + SCREEN_WIDTH/2 + SIZE_MAINCHAR/2 > MAP_WIDTH ) offsetX += (int)posX + SCREEN_WIDTH/2 - MAP_WIDTH + SIZE_MAINCHAR/2;
+	else if ( (int)posX + SIZE_MAINCHAR/2 <= SCREEN_WIDTH/2 ) offsetX = 0;
+	offsetY = SCREEN_HEIGHT/2 - (int)posY - SIZE_MAINCHAR/2;
+	if ( (int)posY + SIZE_MAINCHAR/2 + SCREEN_HEIGHT/2 > MAP_HEIGHT ) offsetY += (int)posY + SCREEN_HEIGHT/2 - MAP_HEIGHT + SIZE_MAINCHAR/2;
+	else if ( (int)posY + SIZE_MAINCHAR/2 <= SCREEN_HEIGHT/2 ) offsetY = 0;
+	
+	
 }
 
 
@@ -179,18 +191,18 @@ if( SDL_PollEvent( &event ) )
 			switch( event.key.keysym.sym )
 			{
 				case SDLK_UP: 
-					if( posY == SCREEN_HEIGHT-SIZE_MAINCHAR ) 
+					if( posY == MAP_HEIGHT-SIZE_MAINCHAR ) 
 					speedY = -600.0;
 					
 					
 					break;
 				case SDLK_LEFT:
 					speedX = -500.0;
-					if( posY < SCREEN_HEIGHT-SIZE_MAINCHAR ) speedX = speedX/2;
+					if( posY < MAP_HEIGHT-SIZE_MAINCHAR ) speedX = speedX/2;
 					break;
 				case SDLK_RIGHT:
 					speedX = 500.0;
-					if( posY < SCREEN_HEIGHT-SIZE_MAINCHAR ) speedX = speedX/2;
+					if( posY < MAP_HEIGHT-SIZE_MAINCHAR ) speedX = speedX/2;
 					break;
 				
 				default: break;
@@ -201,7 +213,7 @@ if( SDL_PollEvent( &event ) )
 			switch( event.key.keysym.sym )
 			{
 				case SDLK_LEFT:
-					if( posY < SCREEN_HEIGHT-SIZE_MAINCHAR )
+					if( posY < MAP_HEIGHT-SIZE_MAINCHAR )
 					{
 						speedX = speedX/2;
 					}
@@ -209,7 +221,7 @@ if( SDL_PollEvent( &event ) )
 				break;
 				
 				case SDLK_RIGHT:
-					if( posY < SCREEN_HEIGHT-SIZE_MAINCHAR )
+					if( posY < MAP_HEIGHT-SIZE_MAINCHAR )
 						{
 							speedX = speedX/2;
 						}

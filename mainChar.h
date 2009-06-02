@@ -32,7 +32,7 @@ protected:
 	
 	
 public:
-   
+    
 	bool stopped;
 	SDL_Surface **charSprite;
 	SDL_Rect *animationBounds;
@@ -45,7 +45,8 @@ public:
 	float getSpeedY();
 	int getX();
 	int getY();
-	
+	int offsetX;
+	int offsetY;
 	void setX(int);
 	void setY(int);
 	void changeSpeedX(float);
