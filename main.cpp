@@ -21,7 +21,7 @@
 
 #include "Timer.h"
 #include "init.h"
-#include "Object.h"
+#include "mainChar.h"
 #include "main.h"
 
 
@@ -73,8 +73,8 @@ int main(int argc, char* argv[])
 	
 		 mainChar->charSprite = &mainChar_Sprite;
 		 
-		 mainChar->setX(rand()%(SCREEN_WIDTH-SIZE_AWESOME));
-		 mainChar->setY(rand()%(SCREEN_HEIGHT-SIZE_AWESOME));
+		 mainChar->setX(rand()%(SCREEN_WIDTH-SIZE_MAINCHAR));
+		 mainChar->setY(rand()%(SCREEN_HEIGHT-SIZE_MAINCHAR));
 		 mainChar->setSpeedX(float(rand()%MAX_SPEED));
 			if(rand()%2 == 1) mainChar->setSpeedX(-mainChar->getSpeedX());
 		 mainChar->setSpeedY(float(rand()%MAX_SPEED));
