@@ -1,0 +1,46 @@
+#labels Featured
+=Introduction=
+
+insert
+text
+here
+
+----
+
+=Description=
+
+insert
+text
+here
+
+----
+
+=Key Features=
+
+insert
+text
+here
+
+----
+
+=Genre=
+
+2D Platform Sidescroller
+
+----
+
+=Platform(s)=
+
+Linux
+Windows
+MacOS
+
+----
+
+=Concept Art=
+
+insert
+text
+here
+
+----
