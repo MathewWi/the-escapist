@@ -63,10 +63,6 @@ int main(int argc, char* argv[])
 	SDL_Surface *surface = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_SWSURFACE);
 	SDL_Surface *mainChar_Sprite = load_image("Data/Sprites/awesome.png");
 	SDL_Surface *backdrop = load_image("Data/Backdrops/test_skybox.jpg");
-	//SDL_Surface *floor = load_image("Data/Backdrops/test_ground.PNG");
-	//SDL_Surface *platforms = load_image("Data/Backdrops/test_platforms.png");
-	
-	//unsigned int mycolor = SDL_MapRGB(surface->format, 20, 20, 20);
 	
 	srand((unsigned)time(0));
 	
@@ -154,12 +150,9 @@ while (running)
 	delete mainChar;
 	delete[] obstacle;
 	
-	
 	clean_up(surface);
 	clean_up(mainChar_Sprite);
 	clean_up(backdrop);
-	//clean_up(floor);
-	//clean_up(platforms);
 	
 	SDL_Quit();
 	
