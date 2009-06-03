@@ -1,4 +1,4 @@
-#summary Game Design Document, by Nev3ra, for all participants to edit freely.
+#summary Game Design Document. The projects bible, all final info can be found here.
 #labels Featured,Phase-Design
 #sidebar TableOfContents
 
