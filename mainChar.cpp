@@ -102,7 +102,7 @@ void MainChar::blit(SDL_Surface *screen)
 	SDL_BlitSurface( charSprite, NULL, screen, &offset );
 }
 
-void MainChar::checkCollision(Obstacle* objects, int arraysize)
+void MainChar::checkCollision(Obstacle* objects)
 {
 	Uint8 *keystates = SDL_GetKeyState( NULL );
 	
@@ -153,7 +153,7 @@ void MainChar::checkCollision(Obstacle* objects, int arraysize)
 	// check with objects
 	SDL_Rect collitionArea;
 	
-	for( int a = 0; a < arraysize; a++)
+	for( int a = 0; a < Obstacle::numberOfObjects; a++)
 	{
 		collitionArea = objects[a].getCollitionAreas(0);
 		if( posX + SIZE_MAINCHAR > collitionArea.x && posX < collitionArea.x + collitionArea.w && posY + SIZE_MAINCHAR > collitionArea.y && posY < collitionArea.y + collitionArea.h )
