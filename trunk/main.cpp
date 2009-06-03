@@ -44,7 +44,7 @@ void blitBackdrop(SDL_Surface* backdrop, SDL_Surface* screen, MainChar mainchar)
 }
 
 
-
+int Obstacle::numberOfObjects = 0;
 
 int main(int argc, char* argv[])
 {
@@ -83,12 +83,12 @@ int main(int argc, char* argv[])
 			if(rand()%2 == 1) mainChar->setSpeedY(-mainChar->getSpeedY());
 	
 	
-	Obstacle *obstacle = new Obstacle[5];
+	Obstacle *obstacle = new Obstacle[4];
 	
-	for (int a = 0; a < 5; a++)
+	for (int a = 0; a < Obstacle::numberOfObjects; a++)
 	{
-		obstacle[a].setX(a*200);
-		obstacle[a].setY(a*200);
+		obstacle[a].setX((a+1)*200);
+		obstacle[a].setY((a+1)*200);
 		obstacle[a].sprite = load_image("Data/Backdrops/platform.png");
 		obstacle[a].collitionZones = new SDL_Rect();
 	}
@@ -122,7 +122,7 @@ while (running)
 		collCoords.w = 200;
 		collCoords.h = 50;
 		
-		for ( int a = 0; a < 5; a++ )
+		for ( int a = 0; a < Obstacle::numberOfObjects; a++ )
 		{
 			obstacle[a].blitObstacle(*mainChar, surface);
 			obstacle[a].setCollitionCoords(0, collCoords);
@@ -130,7 +130,7 @@ while (running)
 			
 			
 			
-			mainChar->checkCollision(obstacle, 5);
+			mainChar->checkCollision(obstacle);
 			mainChar->updateCo(mainTimer->getTicks(), force);
 			mainChar->blit(surface);
 			
@@ -152,7 +152,7 @@ while (running)
 	delete framecounter;
 	delete fpsCounter;	
 	delete mainChar;
-	//delete[] obstacle;
+	delete[] obstacle;
 	
 	
 	clean_up(surface);

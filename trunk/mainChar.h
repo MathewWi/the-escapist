@@ -56,7 +56,7 @@ public:
 	void changeSpeedY(float);
 	void setSpeedX(float);
 	void setSpeedY(float);
-	void checkCollision(Obstacle*, int);
+	void checkCollision(Obstacle*);
 	void blit(SDL_Surface*);
 	void updateCo(int, float);
 	bool handleInput();
