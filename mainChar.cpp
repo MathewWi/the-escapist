@@ -15,8 +15,10 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
  */
+//#define length(a) (sizeof a / sizeof a[0])
 
 #include "mainChar.h"
+#include "obstacle.h"
 
 MainChar::MainChar(int x, int y, float s_x, float s_y)
 {
@@ -26,6 +28,7 @@ MainChar::MainChar(int x, int y, float s_x, float s_y)
 	speedY = s_y;
 	
 	stopped = false;
+	grounded = false;
 	
 }
 
@@ -35,6 +38,7 @@ MainChar::MainChar()
 	speedY = 10;
 	
 	stopped = false;
+	grounded = false;
 	
 }
 
@@ -95,11 +99,13 @@ void MainChar::blit(SDL_Surface *screen)
 	offset.x = (int)posX + offsetX;
 	offset.y = (int)posY + offsetY;
 	
-	SDL_BlitSurface( *charSprite, NULL, screen, &offset );
+	SDL_BlitSurface( charSprite, NULL, screen, &offset );
 }
 
-void MainChar::checkCollision()
+void MainChar::checkCollision(Obstacle* objects, int arraysize)
 {
+	Uint8 *keystates = SDL_GetKeyState( NULL );
+	
 	if( (int)posY < MAP_HEIGHT-SIZE_MAINCHAR ) stopped = false;
 	
 	if ( (int)posX >= MAP_WIDTH-SIZE_MAINCHAR )
@@ -120,16 +126,18 @@ void MainChar::checkCollision()
 		{
 		speedY = 0.0;
 		posY = MAP_HEIGHT-SIZE_MAINCHAR;
+		grounded = true;
 			
 		}
 		
 		if ( !stopped )
 		{
-			Uint8 *keystates = SDL_GetKeyState( NULL );
+			
 			if( !keystates[ SDLK_LEFT ] && !keystates[ SDLK_RIGHT ])
 			{ 
 				speedX = 0.0;
 				stopped = true;
+				
 			}
 		}
 		
@@ -141,6 +149,49 @@ void MainChar::checkCollision()
 		posY = 0;
 		
 	}
+	
+	// check with objects
+	SDL_Rect collitionArea;
+	
+	for( int a = 0; a < arraysize; a++)
+	{
+		collitionArea = objects[a].getCollitionAreas(0);
+		if( posX + SIZE_MAINCHAR > collitionArea.x && posX < collitionArea.x + collitionArea.w && posY + SIZE_MAINCHAR > collitionArea.y && posY < collitionArea.y + collitionArea.h )
+		{
+			if( posX + SIZE_MAINCHAR/2 >= collitionArea.x && posX + SIZE_MAINCHAR/2 <= collitionArea.x + collitionArea.w && posY < collitionArea.y )
+			{
+				if( speedY >= 0.0)
+				{
+					speedY = 0.0;
+					posY = collitionArea.y-SIZE_MAINCHAR;
+					grounded = true;
+			
+				}
+		
+				if ( !stopped )
+				{
+					keystates = SDL_GetKeyState( NULL );
+					if( !keystates[ SDLK_LEFT ] && !keystates[ SDLK_RIGHT ])
+					{ 
+						speedX = 0.0;
+						stopped = true;
+					}
+				}
+			}
+			else if( posX + SIZE_MAINCHAR/2 >= collitionArea.x && posX + SIZE_MAINCHAR/2 <= collitionArea.x + collitionArea.w && posY > collitionArea.y + collitionArea.h )
+			{
+				speedX = -speedX*SURFACE_HARDNESS_WALL;
+				posX = collitionArea.x - SIZE_MAINCHAR;
+			}
+			else 
+			{
+				speedY = -speedY*SURFACE_HARDNESS_GROUND;
+				posY = collitionArea.y + collitionArea.h;
+			}
+		}
+	
+	}
+
 }
 
 
@@ -191,18 +242,19 @@ if( SDL_PollEvent( &event ) )
 			switch( event.key.keysym.sym )
 			{
 				case SDLK_UP: 
-					if( posY == MAP_HEIGHT-SIZE_MAINCHAR ) 
+					if( grounded ) 
 					speedY = -600.0;
+					grounded = false;
 					
 					
 					break;
 				case SDLK_LEFT:
 					speedX = -500.0;
-					if( posY < MAP_HEIGHT-SIZE_MAINCHAR ) speedX = speedX/2;
+					if( !grounded ) speedX = speedX/2;
 					break;
 				case SDLK_RIGHT:
 					speedX = 500.0;
-					if( posY < MAP_HEIGHT-SIZE_MAINCHAR ) speedX = speedX/2;
+					if( !grounded ) speedX = speedX/2;
 					break;
 				
 				default: break;
@@ -213,7 +265,7 @@ if( SDL_PollEvent( &event ) )
 			switch( event.key.keysym.sym )
 			{
 				case SDLK_LEFT:
-					if( posY < MAP_HEIGHT-SIZE_MAINCHAR )
+					if( !grounded )
 					{
 						speedX = speedX/2;
 					}
@@ -221,7 +273,7 @@ if( SDL_PollEvent( &event ) )
 				break;
 				
 				case SDLK_RIGHT:
-					if( posY < MAP_HEIGHT-SIZE_MAINCHAR )
+					if( !grounded )
 						{
 							speedX = speedX/2;
 						}

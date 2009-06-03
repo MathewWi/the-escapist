@@ -18,12 +18,11 @@
 
 
 
-
 #include "Timer.h"
 #include "init.h"
-#include "mainChar.h"
+#include "obstacle.h"
 #include "main.h"
-
+#include "mainChar.h"
 
 void blitBackdrop(SDL_Surface* backdrop, SDL_Surface* screen, MainChar mainchar)
 {
@@ -40,7 +39,7 @@ void blitBackdrop(SDL_Surface* backdrop, SDL_Surface* screen, MainChar mainchar)
 	x = 0;
 	y = 0;
 	
-	apply_surface(x, y, backdrop, screen, cutout);
+	apply_surface(x, y, backdrop, screen, &cutout);
 	
 }
 
@@ -63,7 +62,7 @@ int main(int argc, char* argv[])
 	
 	SDL_Surface *surface = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_SWSURFACE);
 	SDL_Surface *mainChar_Sprite = load_image("Data/Sprites/awesome.png");
-	SDL_Surface *backdrop = load_image("Data/Backdrops/test_skybox.png");
+	SDL_Surface *backdrop = load_image("Data/Backdrops/test_skybox.jpg");
 	//SDL_Surface *floor = load_image("Data/Backdrops/test_ground.PNG");
 	//SDL_Surface *platforms = load_image("Data/Backdrops/test_platforms.png");
 	
@@ -73,7 +72,8 @@ int main(int argc, char* argv[])
 	
 	MainChar *mainChar = new MainChar();
 	
-		 mainChar->charSprite = &mainChar_Sprite;
+	
+		 mainChar->charSprite = mainChar_Sprite;
 		 
 		 mainChar->setX(rand()%(SCREEN_WIDTH-SIZE_MAINCHAR));
 		 mainChar->setY(rand()%(SCREEN_HEIGHT-SIZE_MAINCHAR));
@@ -81,6 +81,19 @@ int main(int argc, char* argv[])
 			if(rand()%2 == 1) mainChar->setSpeedX(-mainChar->getSpeedX());
 		 mainChar->setSpeedY(float(rand()%MAX_SPEED));
 			if(rand()%2 == 1) mainChar->setSpeedY(-mainChar->getSpeedY());
+	
+	
+	Obstacle *obstacle = new Obstacle[5];
+	
+	for (int a = 0; a < 5; a++)
+	{
+		obstacle[a].setX(a*200);
+		obstacle[a].setY(a*200);
+		obstacle[a].sprite = load_image("Data/Backdrops/platform.png");
+		obstacle[a].collitionZones = new SDL_Rect();
+	}
+	
+	
 	 
 
 
@@ -91,6 +104,7 @@ int main(int argc, char* argv[])
 	fpsCounter->start();
 	fpsCounter->reset();
 	bool running = true;
+	SDL_Rect collCoords;
 
 while (running)
 {
@@ -100,12 +114,23 @@ while (running)
 	if ( fpsCounter->getTicks() >= 1000/FPS_CAP )
 	{
 		fpsCounter->reset();
-		//SDL_FillRect(surface, &surface->clip_rect, mycolor);
 		
 		blitBackdrop(backdrop, surface, *mainChar);
 		
+		collCoords.x = 0;
+		collCoords.y = 0;
+		collCoords.w = 200;
+		collCoords.h = 50;
+		
+		for ( int a = 0; a < 5; a++ )
+		{
+			obstacle[a].blitObstacle(*mainChar, surface);
+			obstacle[a].setCollitionCoords(0, collCoords);
+		}
 			
-			mainChar->checkCollision();
+			
+			
+			mainChar->checkCollision(obstacle, 5);
 			mainChar->updateCo(mainTimer->getTicks(), force);
 			mainChar->blit(surface);
 			
@@ -127,6 +152,7 @@ while (running)
 	delete framecounter;
 	delete fpsCounter;	
 	delete mainChar;
+	//delete[] obstacle;
 	
 	
 	clean_up(surface);
