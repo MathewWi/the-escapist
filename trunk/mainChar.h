@@ -21,6 +21,8 @@
 #include "init.h"
 #include "main.h"
 
+class Obstacle;
+
 
 class MainChar
 {
@@ -34,7 +36,8 @@ protected:
 public:
     
 	bool stopped;
-	SDL_Surface **charSprite;
+	bool grounded;
+	SDL_Surface *charSprite;
 	SDL_Rect *animationBounds;
 	SDL_Rect *collitionAreas;
 	SDL_Event event;
@@ -53,7 +56,7 @@ public:
 	void changeSpeedY(float);
 	void setSpeedX(float);
 	void setSpeedY(float);
-	void checkCollision();
+	void checkCollision(Obstacle*, int);
 	void blit(SDL_Surface*);
 	void updateCo(int, float);
 	bool handleInput();

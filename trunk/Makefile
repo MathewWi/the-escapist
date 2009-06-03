@@ -1,7 +1,7 @@
 CPP=g++
 LDFLAGS=-lSDL -lSDL_image
 
-OBJECTS=mainChar.o Timer.o init.o main.o
+OBJECTS=obstacle.o mainChar.o Timer.o init.o main.o
 
 TARGET=the-escapist
 
@@ -24,3 +24,6 @@ init.o: init.cpp
 
 main.o: main.cpp
 	$(CPP) $(CXXFLAGS) -c main.cpp -o main.o
+
+obstacle.o: obstacle.cpp
+	$(CPP) $(CXXFLAGS) -c obstacle.cpp -o obstacle.o
