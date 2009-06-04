@@ -1,8 +1,8 @@
 #summary Concept of the project. Free for all to set notes or edit.
 #labels Featured
-#sidebar TOCArticles
+|| #sidebar TOCArticles ||
 
-  * [Welcome ↑ Home]
+
   * [Concept#Introduction Introduction]
   * [Concept#Description Description]
   * [Concept#Key_Features Key Features]
