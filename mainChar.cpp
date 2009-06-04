@@ -298,11 +298,11 @@ if( SDL_PollEvent( &event ) )
 					break;
 				case SDLK_LEFT:
 					speedX = -500.0;
-					if( !grounded ) speedX = speedX/2;
+					if( !grounded ) speedX = speedX/3;
 					break;
 				case SDLK_RIGHT:
 					speedX = 500.0;
-					if( !grounded ) speedX = speedX/2;
+					if( !grounded ) speedX = speedX/3;
 					break;
 				
 				default: break;
@@ -315,7 +315,7 @@ if( SDL_PollEvent( &event ) )
 				case SDLK_LEFT:
 					if( !grounded )
 					{
-						speedX = speedX/2;
+						speedX = speedX/5;
 					}
 					else speedX = 0;
 				break;
@@ -323,7 +323,7 @@ if( SDL_PollEvent( &event ) )
 				case SDLK_RIGHT:
 					if( !grounded )
 						{
-							speedX = speedX/2;
+							speedX = speedX/5;
 						}
 						else speedX = 0;
 				break;
