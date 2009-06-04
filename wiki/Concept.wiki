@@ -11,8 +11,8 @@
 
 =Introduction=
 
-|| *Platform(s)* || Windows || Linux || MacOS || _(XBLA)_ ||
-|| *Input Method(s)* || Keyboard || Gamepad ||
+|| *Platform(s)* || Windows, Linux, MacOS, _(XBLA)_ ||
+|| *Input Method(s)* || Keyboard, Gamepad ||
 || *Genre* || Side-scrolling Platformer ||
 || *Developer(s)* || ./GLHF Game Studios ||
 || *Release* || TBD ||
