@@ -1,6 +1,6 @@
 #summary Concept of the project. Free for all to set notes or edit.
 #labels Featured
-|| #sidebar TOCArticles ||
+#sidebar TOCArticles
 
 
   * [Concept#Introduction Introduction]
@@ -45,8 +45,8 @@ Further on in the game, you'll meet exciting monsters and bosses to fight, in an
 
 =Concept Art=
 
-insert
-text
-here
+http://i44.tinypic.com/23idzsz.jpg
+
+More to come
 
 ----
