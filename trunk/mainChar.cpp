@@ -158,35 +158,83 @@ void MainChar::checkCollision(Obstacle* objects)
 		collitionArea = objects[a].getCollitionAreas(0);
 		if( posX + SIZE_MAINCHAR > collitionArea.x && posX < collitionArea.x + collitionArea.w && posY + SIZE_MAINCHAR > collitionArea.y && posY < collitionArea.y + collitionArea.h )
 		{
-			if( posX + SIZE_MAINCHAR/2 >= collitionArea.x && posX + SIZE_MAINCHAR/2 <= collitionArea.x + collitionArea.w && posY < collitionArea.y )
+			if( posX + SIZE_MAINCHAR/2 >= collitionArea.x && posX + SIZE_MAINCHAR/2 <= collitionArea.x + collitionArea.w )
 			{
-				if( speedY >= 0.0)
-				{
-					speedY = 0.0;
-					posY = collitionArea.y-SIZE_MAINCHAR;
-					grounded = true;
+				if( posY <= collitionArea.y )
+				{	
+					if( speedY >= 0.0)
+					{
+						speedY = 0.0;
+						posY = collitionArea.y-SIZE_MAINCHAR;
+						grounded = true;
 			
-				}
+					}
 		
-				if ( !stopped )
-				{
-					keystates = SDL_GetKeyState( NULL );
-					if( !keystates[ SDLK_LEFT ] && !keystates[ SDLK_RIGHT ])
-					{ 
-						speedX = 0.0;
-						stopped = true;
+					if ( !stopped )
+					{
+						keystates = SDL_GetKeyState( NULL );
+						if( !keystates[ SDLK_LEFT ] && !keystates[ SDLK_RIGHT ])
+						{ 
+							speedX = 0.0;
+							stopped = true;
+						}
 					}
 				}
+				else
+				{
+					speedY = -speedY*SURFACE_HARDNESS_GROUND;
+					posY = collitionArea.y + collitionArea.h;
+				}
+				break;
 			}
-			else if( posX + SIZE_MAINCHAR/2 >= collitionArea.x && posX + SIZE_MAINCHAR/2 <= collitionArea.x + collitionArea.w && posY > collitionArea.y + collitionArea.h )
+			else if( posY + SIZE_MAINCHAR/2 <= collitionArea.y + collitionArea.w && posY >= collitionArea.y )
 			{
-				speedX = -speedX*SURFACE_HARDNESS_WALL;
-				posX = collitionArea.x - SIZE_MAINCHAR;
+				if ( posX < collitionArea.x )
+				{
+					speedX = -speedX*SURFACE_HARDNESS_WALL;
+					posX = collitionArea.x - SIZE_MAINCHAR;
+				}
+				else 
+				{
+					speedX = -speedX*SURFACE_HARDNESS_WALL;
+					posX = collitionArea.x + collitionArea.w;
+				}
+				break;
 			}
+			
 			else 
 			{
-				speedY = -speedY*SURFACE_HARDNESS_GROUND;
-				posY = collitionArea.y + collitionArea.h;
+				grounded = false;
+				stopped = false;
+				
+				if( posX < collitionArea.x && posY + SIZE_MAINCHAR < collitionArea.y)
+				{
+					posX = collitionArea.x - SIZE_MAINCHAR - 1;
+					posY = collitionArea.y - SIZE_MAINCHAR - 1;
+					speedX = speedX*0.3;
+					if( speedX > 0 ) speedX = -speedX;
+					speedY = -speedY*SURFACE_HARDNESS_WALL;
+					if ( speedY > 0 ) speedY = -speedY;
+				}
+				else if( posX > collitionArea.x && posY + SIZE_MAINCHAR > collitionArea.y)
+				{
+					posX = collitionArea.x + collitionArea.w + 1;
+					posY = collitionArea.y - SIZE_MAINCHAR -1;
+					speedX = speedX*0.3;
+					if( speedX < 0 ) speedX = -speedX;
+					speedY = -speedY*SURFACE_HARDNESS_WALL;
+					if( speedY > 0 ) speedY = -speedY;
+				}
+				else
+				{
+					float tempSpeed;
+					tempSpeed = speedX;
+					speedX = -speedY;
+					speedY = -tempSpeed;
+				} 
+				
+				
+				break;
 			}
 		}
 	
