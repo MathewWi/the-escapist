@@ -11,11 +11,17 @@
 
 =Introduction=
 
-This project, codenamed the-escapist, is a 2D side-scrolling platformer for the PC, made from scratch in SDL. The key features will be the vector'ish artwork that makes the game a piece of art, and the unique aspects of the rather normal 2D genre.
-
 || *Platform(s)* || Windows || Linux || MacOS || _(XBLA)_ ||
-
+|| *Input Method(s)* || Keyboard || Gamepad ||
 || *Genre* || Side-scrolling Platformer ||
+|| *Developer(s)* || ./GLHF Game Studios ||
+|| *Release* || TBD ||
+|| *Mode(s)* || Single Player ||
+|| *System Req.* || TBD ||
+|| *Media* || DLC ||
+
+
+This project, codenamed the-escapist, is a 2D side-scrolling platformer for the PC, made from scratch in SDL. The key features will be the vector'ish artwork that makes the game a piece of art, and the unique aspects of the rather normal 2D genre.
 
 ----
 
