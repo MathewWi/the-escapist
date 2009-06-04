@@ -1,41 +1,46 @@
 #summary Concept of the project. Free for all to set notes or edit.
 #labels Featured
+#sidebar TOCArticles
+
+  * [Welcome ↑ Home]
+  * [Articles Introduction]
+  * [Articles Description]
+  * [Articles Key Features]
+  * [Articles Concept Art]
+
+    777
+
 
 =Introduction=
 
-insert
-text
-here
+This project, codenamed the-escapist, is a 2D sidescrolling platformer for the PC, made from scratch in SDL. The key features will be the vector'ish artwork that makes the game a piece of art, and the uniquie aspects of the rather normal 2D genre.
+
+|| *Platform(s)* || Windows || Linux || MacOS || _(XBLA)_ ||
+|| *Genre* || Side-scrolling Platformer ||
 
 ----
 
+  Note
+  Things written in *_bold italic_* is not final, and do not have any title yet.
+
 =Description=
 
-insert
-text
-here
+As you start up the game, a slick menu appears, giving a little impression on how the general atmosphere in the game is. Soon you're welcomed into *_the protagonists_* amazing 2D world. A nice little intro sequence gives you a kickstart into the story, and the game itself, and then glides over, almost unnoticeable, giving you control over *_the protagonist_*. Your adventure starts here.
+
+Soon you notice that the black surface you walk on is special. If you stand still for too long, the black, goo-like surface will engulf you, leading to death. But at the same time, you'll also notice that this surface is the only surface you may walk on. In other words, its both the source of life, and death. 
+
+Further on in the game, you'll meet exciting monsters and bosses to fight, in an incredible, fast-paced adventure in a unique fantasy world. 
 
 ----
 
 =Key Features=
 
-insert
-text
-here
+ * A unique, artistic world.
+ * Hectic and fast-paced, though compelling gameplay.
+ * Original and ravishing soundtrack.
+ * Linux, MacOS and Windows support
+ * A fascinated story
 
-----
-
-=Genre=
-
-2D Platform Sidescroller
-
-----
-
-=Platform(s)=
-
-Linux
-Windows
-MacOS
 
 ----
 
@@ -46,3 +51,4 @@ text
 here
 
 ----
+
