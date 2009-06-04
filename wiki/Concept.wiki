@@ -3,19 +3,18 @@
 #sidebar TOCArticles
 
   * [Welcome ↑ Home]
-  * [Articles Introduction]
-  * [Articles Description]
-  * [Articles Key Features]
-  * [Articles Concept Art]
-
-    777
+  * [Concept#Introduction Introduction]
+  * [Concept#Description Description]
+  * [Concept#Key_Features Key Features]
+  * [Concept#Concept_Art Concept Art]
 
 
 =Introduction=
 
-This project, codenamed the-escapist, is a 2D sidescrolling platformer for the PC, made from scratch in SDL. The key features will be the vector'ish artwork that makes the game a piece of art, and the uniquie aspects of the rather normal 2D genre.
+This project, codenamed the-escapist, is a 2D side-scrolling platformer for the PC, made from scratch in SDL. The key features will be the vector'ish artwork that makes the game a piece of art, and the unique aspects of the rather normal 2D genre.
 
 || *Platform(s)* || Windows || Linux || MacOS || _(XBLA)_ ||
+
 || *Genre* || Side-scrolling Platformer ||
 
 ----
@@ -51,4 +50,3 @@ text
 here
 
 ----
-
