@@ -8,14 +8,15 @@
   * [Concept#Key_Features Key Features]
   * [Concept#Concept_Art Concept Art]
 
+
+
 || *Platform(s)* || Windows, Linux, Mac ||
 || *Input Method(s)* || Keyboard, Gamepad ||
 || *Genre* || Side-scrolling Platformer ||
-|| *Developer(s)* || ./GLHF Game Studios ||
-|| *Release* || TBD ||
 || *Mode(s)* || Single Player ||
 || *System Req.* || TBD ||
 || *Media* || DLC ||
+
 
 =Introduction=
 
