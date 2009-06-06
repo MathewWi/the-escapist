@@ -1,5 +1,5 @@
 #summary Game Design Document. The projects bible, If it’s not here, it won’t be in the game.
-#labels Featured,Phase-Design
+#labels Featured,Phase-Implementation
 #sidebar TableOfContents
 
 =Game Title=
@@ -24,13 +24,39 @@ v0.1 by nev3ra. 06.06.09
 
 =Table of Contents=
 
-table
+* [GDD#Game_Overview Game Overview]
+    * [GDD#Game_Concept Game_Concept]
+    * [GDD#Genre Genre]
+    * [GDD#Target_Audience Target Audience]
+    * [GDD#Game_Flow_Summary Game Flow Summary]
+    * [GDD#Look_and_Feel Look and Feel]
+    * [GDD#Project_Scope Project Scope]
+        * [GDD#Number_of_Levels Number of Levels]
+        * [GDD#Number_of_NPCs Number of NPCs]
+        * [GDD#Number_of_Powerups Number of Powerups]
+* [GDD#Gameplay_and_Mechanics Gameplay and Mechanics]
+    * [GDD#Gameplay Gameplay]
+        * [GDD#Game_Progression Game Progression]
+        * [GDD#Mission/Challenge_Structure Mission/Challenge Structure]
+        * [GDD#Objectives Objectives]
+        * [GDD#Play_Flow Play Flow]
+    * [GDD#Mechanics Mechanics]
+        * [GDD#Physics Physics]
+        * [GDD#Movement Movement]
+            * [GDD#General_Movement General Movement]
+            * [GDD#Other_Movement Other Movement]
+        * [GDD#Objects Objects]
+            * [GDD#Picking_up_Objects Picking up Objects]
+            * [GDD#Moving_Objects Moving Objects]
+        * [GDD#Actions Actions]
+            * [GDD#Switches_and_Buttons Switches and Buttons]
+            * [GDD#Picking_up_Carrying_and_Dropping Picking up Carrying and Dropping]
+            * [GDD#Talking Talking]
+            * [GDD#Reading Reading]
+        * [GDD#Combat Combat]
+        * [GDD#Economy Economy]
 
-table
 
-table
-
-table
 
 =Design History=
 
@@ -67,7 +93,7 @@ A summary of the scope of the game.
 
 10 levels, on 3 islands.
 
-===Number of NPC's===
+===Number of NPCs===
 
 -
 
@@ -111,11 +137,11 @@ How does the physical universe work?
 
 -
 
-====General movement==== 
+====General Movement==== 
 
 -
 
-====Other movement====
+====Other Movement====
 
 -
 
@@ -123,11 +149,11 @@ How does the physical universe work?
 
 -
 
-====Picking up objects==== 
+====Picking up Objects==== 
 
 -
 
-====Moving objects====
+====Moving Objects====
 
 -
 
@@ -135,11 +161,11 @@ How does the physical universe work?
 
 -
 
-====Switches and buttons====
+====Switches and Buttons====
 
 -
 
-====Picking up, Carrying, and Dropping====
+====Picking up Carrying and Dropping====
 
 -
 
@@ -264,3 +290,281 @@ Specific details like scripts and cut scenes may not be in this document but be 
 -
 
 ==Characters==
+
+-
+
+===Main Character===
+
+====Back Story====
+
+-
+
+====Personality====
+
+-
+
+====Look====
+
+Animations, relevance to game story, relationships to other game characters etc.
+
+===NPC 1===
+
+-
+
+===NPC 2===
+
+-
+
+=Levels=
+
+-
+
+==Level 1==
+
+===Synopsis===
+
+-
+
+===Introductory Material===
+
+Cut scene etc.
+
+===Objectives===
+
+-
+
+===Physical Description===
+
+-
+
+===Map===
+
+-
+
+===Critical Path===
+
+-
+
+===Encounters===
+
+-
+
+===Level Walkthrough===
+
+-
+
+===Closing Material===
+
+-
+
+==Level 2==
+
+===Synopsis===
+
+-
+
+===Introductory Material===
+
+Cut scene etc.
+
+===Objectives===
+
+-
+
+===Physical Description===
+
+-
+
+===Map===
+
+-
+
+===Critical Path===
+
+-
+
+===Encounters===
+
+-
+
+===Level Walkthrough===
+
+-
+
+===Closing Material===
+
+-
+
+=Interface=
+
+-
+
+==Visual System==
+
+-
+
+===HUD===
+
+-
+
+===Menus===
+
+-
+
+==Control System==
+
+How does the player control the game?
+
+==Audio==
+
+-
+
+==Music==
+
+-
+
+==Sound Effects==
+
+-
+
+=Artificial Intelligence=
+
+-
+
+==Enemy AI==
+
+Villains and monsters etc.
+
+==Non-Combat Characters==
+
+-
+
+==Friendly Characters==
+
+-
+
+==Player and collision detection==
+
+-
+
+=Technical=
+
+-
+
+==Target Hardware==
+
+-
+
+==Development Hardware and Software==
+
+Linux only atm. (Testing etc)
+
+==Development procedures and standards==
+
+-
+
+==Game Engine==
+
+-
+
+==Scripting language==
+
+-
+
+=Game Art=
+
+-
+
+==Concept Art==
+
+-
+
+==Style Guides==
+
+-
+
+==Characters==
+
+-
+
+==Enviroments==
+
+-
+
+==Equipment==
+
+-
+
+==Cutscenes==
+
+-
+
+==Miscellaneous==
+
+-
+
+=Appendices=
+
+-
+
+==Asset list==
+
+-
+
+===Art===
+
+-
+
+====Model and Texture list====
+
+-
+
+====Animation list====
+
+-
+
+====Effects list====
+
+-
+
+====Interface Art list====
+
+-
+
+====Cut Scene list====
+
+-
+
+===Sound===
+
+-
+
+====Enviromental Sounds====
+
+-
+
+====Weapons Sounds====
+
+-
+
+====Interface Sounds====
+
+-
+
+===Music===
+
+-
+
+====Ambient====
+
+-
+
+===="Action"====
+
+-
+
+====Victory====
+
+-
+
+====Defeat====
