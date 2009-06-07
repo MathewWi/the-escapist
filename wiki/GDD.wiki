@@ -66,7 +66,7 @@ v0.1 by nev3ra. 06.06.09
             * [GDD#Game_Options Game Options]
             * [GDD#Saving Saving]
             * [GDD#Cheats_and_Easter_Eggs Cheats and Easter Eggs]
-* [GDD#Story_Setting_and_Character]
+* [GDD#Story_Setting_and_Character Story Setting and Character]
     * [GDD#Story_and_Narrative Story and Narrative]
             * [GDD#Back_Story Back_Story]
             * [GDD#Plot_Elements Plot Elements]
