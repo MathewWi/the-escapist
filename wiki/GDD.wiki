@@ -8,15 +8,21 @@
 
 At the moment there's only a codename; The Escapist. The official name will come soon.
 
+----
+
 ==Copyright Information==
 
 GPL3
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
 
+----
+
 ==GDD Version==
 
 v0.1 by nev3ra. 06.06.09
+
+----
 
 =Table of Contents=
 
@@ -150,15 +156,14 @@ v0.1 by nev3ra. 06.06.09
             * [GDD#Victory Victory]
             * [GDD#Defeat Defeat]
 
-
-
-
-
+----
 
 =Design History=
 
   * 06.06.09: We're at the concept phase, and closing up on the pre-alhpa stage.
   * 31.05.09: The project is started.
+
+----
 
 =Game Overview=
 
@@ -322,6 +327,8 @@ What are the options? How do they affect the game?
 
 -
 
+----
+
 =Story Setting and Character=
 
 -
@@ -416,6 +423,8 @@ Animations, relevance to game story, relationships to other game characters etc.
 
 -
 
+----
+
 =Levels=
 
 -
@@ -496,6 +505,8 @@ Cut scene etc.
 
 -
 
+----
+
 =Interface=
 
 -
@@ -547,6 +558,8 @@ Villains and monsters etc.
 ==Player and collision detection==
 
 -
+
+----
 
 =Technical=
 
@@ -669,3 +682,7 @@ Linux only atm. (Testing etc)
 -
 
 ====Defeat====
+
+-
+
+----
