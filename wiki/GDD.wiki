@@ -14,10 +14,6 @@ GPL3
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. 
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-
-
-
 ==GDD Version==
 
 v0.1 by nev3ra. 06.06.09
@@ -150,7 +146,7 @@ v0.1 by nev3ra. 06.06.09
             * [GDD#Interface_Sounds Interface Sounds]
         * [GDD#Music Music]
             * [GDD#Ambient Ambient]
-            * [GDD#"Action" "Action"]
+            * [GDD#Action Action]
             * [GDD#Victory Victory]
             * [GDD#Defeat Defeat]
 
@@ -168,23 +164,27 @@ v0.1 by nev3ra. 06.06.09
 
 ==Game Concept==
 
--
+As you start up the game, a slick menu appears, giving a little impression on how the general atmosphere and graphics in the game is. Soon you're welcomed into the protagonists amazing 2D world. A nice little intro sequence gives you a kickstart into the story, and the game itself, and then glides over, almost unnoticeable, giving you control over the protagonist. Your adventure starts here. 
+
+Soon you notice that the black surface you walk on is special. If you stand still for too long, the black, goo-like surface will engulf you, leading to death. But at the same time, you'll also notice that this surface is the only surface you may walk on. In other words, its both the source of life, and death. 
+
+Further on in the game, you'll meet exciting monsters and bosses to fight, in an incredible, fast-paced adventure in a unique fantasy world.
 
 ==Genre==
 
--
+Side-scrolling Platformer
 
 ==Target Audience==
 
--
+The targeted audience will be people in all ages. 
 
 ==Game Flow Summary==
 
-How does the player move through the game.   Both through framing interface and the game itself.
+The player moves to the left (back) or the right (forward). It'll be a "regular 2D-Game" Game flow, where you have to get to the other side of the level. On level complete, the player are presented with a map, where he may choose which level to go to next. The interface flow will be quick and responsive, and minimalistic - easy to understand.
 
 ==Look and Feel==
 
-What is the basic look and feel of the game?  What is the visual style?
+The Main visual style of the game will be the "Vector'ish" design. It will be beautiful and compelling. Solid colors, with a thin black outline, in contrast with the main characters white outlines.
 
 ==Project Scope==
 
@@ -196,7 +196,7 @@ A summary of the scope of the game.
 
 ===Number of NPCs===
 
--
+10 different kinds of NPCs, and 5 Bosses.
 
 ===Number of powerups===
 
@@ -228,7 +228,7 @@ How does the game flow for the game player
 
 ==Mechanics==
 
-What are the rules to the game, both implicit and explicit.  This is the model of the universe that the game works under.  Think of it as a simulation of a world, how do all the pieces interact?  This actually can be a very large section.
+What are the rules to the game, both implicit and explicit.  This is the model of the universe that the game works under.  Think of it as a simulation of a world, how do all the pieces interact? 
 
 ===Physics===
 
@@ -660,7 +660,7 @@ Linux only atm. (Testing etc)
 
 -
 
-===="Action"====
+====Action====
 
 -
 
