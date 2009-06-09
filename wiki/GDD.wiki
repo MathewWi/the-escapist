@@ -2,6 +2,14 @@
 #labels Featured,Phase-Implementation
 #sidebar TableOfContents
 
+
+<wiki:comment>
+Ideas yet to be implemented;
+
+At lvl 3 at the end of the first boss, the player dies (Boss' last action OR accident), and comes to heaven (lvl 4, which will be a cross from the starting island to the mainland). He gets rejected at the gates of heaven, and walks in anger on top of the skies. Every sky behind him turns blackish as himself. The evil shit begins.
+
+</wiki:comment>
+
 =Game Title=
 
 ==Game Name==
@@ -193,25 +201,27 @@ The Main visual style of the game will be the "Vector'ish" design. It will be be
 
 ==Project Scope==
 
-The game will consist of 10 levels in total, with a large variety of themes. Each level will be one Act, story-wise, and it will all be spread among 4 islands (3 small, one big)
+The game will consist of 10 levels in total, with a large variety of themes. Each level will be one Act, story-wise, and it will all be spread among 4 islands (3 small, one big).
 
 http://bildr.no/image/428407.jpeg
 
 ===Number of Levels===
 
-10 levels, on 3 islands.
+10 levels in total.
 
 ===Number of NPCs===
 
-10 different kinds of NPCs, and 5 Bosses.
+10 different kinds of NPCs, and 3 Bosses.
 
 ===Number of powerups===
 
--
+|| 1 || HP Up ||
+|| 2 || Mana Up ||
+|| 3 || - ||
 
 =Gameplay and Mechanics=
 
--
+The general gameplay will be familiar for most; classic 2D. Though it has its unique aspects.
 
 ==Gameplay==
 
@@ -227,7 +237,7 @@ http://bildr.no/image/428407.jpeg
 
 ===Objectives===
 
-What are the objectives of the game?
+The main objectives in the game is to simply finish the level, and get to the next one.
 
 ===Play Flow===
 
@@ -291,7 +301,7 @@ How does the physical universe work?
 
 ===Economy===
 
-How is the economy in the game handeled?
+There is no economy in the game, as there will be nothing to spend any "money" on.
 
 ==Screen Flow==
 
@@ -361,7 +371,7 @@ Specific details like scripts and cut scenes may not be in this document but be 
 
 ====Act I====
 
--
+The player sets onto his journey/tutorial'ish.
 
 ====Act II====
 
@@ -369,11 +379,11 @@ Specific details like scripts and cut scenes may not be in this document but be 
 
 ====Act III====
 
--
+This level is set in the moauntains of the starting island, and a boss is presented at the end. Upon victory, the player dies (not yet decided how), which leads him to the next rather interesting level.
 
 ====Act IV====
 
--
+The player died, and came to heaven. Though, he got rejected at the gates of heaven, and through the whole level he is unstopable, and as he walks on the white skies, they turn black behind him.
 
 ====Act V====
 
@@ -397,13 +407,15 @@ Specific details like scripts and cut scenes may not be in this document but be 
 
 ====Act X====
 
--
+Final level. (Gets his revenge on the almighty?)
 
 ==Characters==
 
 -
 
 ===Main Character===
+
+-
 
 ====Back Story====
 
@@ -519,7 +531,7 @@ Cut scene etc.
 
 ===HUD===
 
--
+The HUD will be simple, to "promote" the overall look of the game and the art itself. Minimalistic.
 
 ===Menus===
 
@@ -527,7 +539,14 @@ Cut scene etc.
 
 ==Control System==
 
-How does the player control the game?
+|| Keyboard ||
+|| Jump || _Space_ ||
+|| Crouch || _Down Arrow_ ||
+|| Move Right || _Right Arrow_ ||
+|| Move Left || _Left Arrow_ ||
+|| - || Q ||
+|| - || w ||
+|| - || E ||
 
 ==Audio==
 
