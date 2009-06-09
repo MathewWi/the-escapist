@@ -2,14 +2,6 @@
 #labels Featured,Phase-Implementation
 #sidebar TableOfContents
 
-
-<wiki:comment>
-Ideas yet to be implemented;
-
-At lvl 3 at the end of the first boss, the player dies (Boss' last action OR accident), and comes to heaven (lvl 4, which will be a cross from the starting island to the mainland). He gets rejected at the gates of heaven, and walks in anger on top of the skies. Every sky behind him turns blackish as himself. The evil shit begins.
-
-</wiki:comment>
-
 =Game Title=
 
 ==Game Name==
@@ -28,6 +20,7 @@ This program is free software; you can redistribute it and/or modify it under th
 
 ==GDD Version==
 
+v0.3 by nev3ra. 09.06.09
 v0.1 by nev3ra. 06.06.09
 
 ----
@@ -241,7 +234,7 @@ The main objectives in the game is to simply finish the level, and get to the ne
 
 ===Play Flow===
 
-How does the game flow for the game player
+The game will flow nicely for the player, with smooth animations and a lagfree enviroment. The game itself _may_ be fast-paced, as the ground could engulf the player over time if too long breaks are taken. This will also add hectic fights versus mobs and bosses.
 
 ==Mechanics==
 
@@ -301,7 +294,7 @@ How does the physical universe work?
 
 ===Economy===
 
-There is no economy in the game, as there will be nothing to spend any "money" on.
+There is no economy in the game, as there will be nothing to spend anything on.
 
 ==Screen Flow==
 
@@ -333,7 +326,7 @@ What are the options? How do they affect the game?
 
 ===Saving===
 
--
+Saving can be done after each act/level is completed.
 
 ===Cheats and Easter Eggs===
 
@@ -383,7 +376,7 @@ This level is set in the moauntains of the starting island, and a boss is presen
 
 ====Act IV====
 
-The player died, and came to heaven. Though, he got rejected at the gates of heaven, and through the whole level he is unstopable, and as he walks on the white skies, they turn black behind him.
+The player died, and came to heaven. Though, he got rejected at the gates of heaven, and through the whole level he is unstopable, and as he walks on the white skies, they turn black behind him, along with the sky turning black/blue'ish.
 
 ====Act V====
 
@@ -548,6 +541,15 @@ The HUD will be simple, to "promote" the overall look of the game and the art it
 || - || w ||
 || - || E ||
 
+|| Gamepad ||
+|| Jump || X ||
+|| Crouch || _Down Arrow_ ||
+|| Move Right || _Right Arrow_ ||
+|| Move Left || _Left Arrow_ ||
+|| - || Square ||
+|| - || Circle ||
+|| - || Triangle ||
+
 ==Audio==
 
 -
@@ -588,7 +590,7 @@ Villains and monsters etc.
 
 ==Target Hardware==
 
--
+Most computers (Not a very heavy game?)
 
 ==Development Hardware and Software==
 
@@ -600,11 +602,11 @@ Linux only atm. (Testing etc)
 
 ==Game Engine==
 
--
+SDL/Self Developed
 
 ==Scripting language==
 
--
+C++
 
 =Game Art=
 
@@ -612,7 +614,10 @@ Linux only atm. (Testing etc)
 
 ==Concept Art==
 
--
+http://i44.tinypic.com/23idzsz.jpg
+
+http://bildr.no/image/428407.jpeg
+
 
 ==Style Guides==
 
@@ -672,11 +677,11 @@ Linux only atm. (Testing etc)
 
 ===Sound===
 
--
+airmaker90
 
 ====Enviromental Sounds====
 
--
+www.soundsnap.com (?)
 
 ====Weapons Sounds====
 
@@ -684,15 +689,15 @@ Linux only atm. (Testing etc)
 
 ====Interface Sounds====
 
--
+www.soundsnap.com (?)
 
 ===Music===
 
--
+airmaker90 makes the music from scratch :D
 
 ====Ambient====
 
--
+airmaker90 + www.soundsnap.com (?)
 
 ====Action====
 
