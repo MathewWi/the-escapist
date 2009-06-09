@@ -193,7 +193,9 @@ The Main visual style of the game will be the "Vector'ish" design. It will be be
 
 ==Project Scope==
 
-A summary of the scope of the game.
+The game will consist of 10 levels in total, with a large variety of themes. Each level will be one Act, story-wise, and it will all be spread among 4 islands (3 small, one big)
+
+http://bildr.no/image/428407.jpeg
 
 ===Number of Levels===
 
