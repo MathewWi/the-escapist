@@ -20,8 +20,9 @@ This program is free software; you can redistribute it and/or modify it under th
 
 ==GDD Version==
 
-v0.3 by nev3ra. 09.06.09
-v0.1 by nev3ra. 06.06.09
+    *v0.4 by nev3ra. 20.06.09
+    *v0.3 by nev3ra. 09.06.09
+    *v0.1 by nev3ra. 06.06.09
 
 ----
 
@@ -161,8 +162,8 @@ v0.1 by nev3ra. 06.06.09
 
 =Design History=
 
-  * 06.06.09: We're at the concept phase, and closing up on the pre-alhpa stage.
-  * 31.05.09: The project is started.
+   * 06.06.09: We're at the concept phase, and closing up on the pre-alhpa stage.
+   * 31.05.09: The project is started.
 
 ----
 
@@ -176,17 +177,19 @@ Soon you notice that the black surface you walk on is special. If you stand stil
 
 Further on in the game, you'll meet exciting monsters and bosses to fight, in an incredible, fast-paced adventure in a unique fantasy world.
 
+_Additional note; The main aspect of the game will be the visuals, and the graphics, as we dont expect to get too advanced programmers etc. Allthough, simpleness can always result in epicness!_
+
 ==Genre==
 
 Side-scrolling Platformer
 
 ==Target Audience==
 
-The targeted audience will be people in all ages. 
+The targeted audience will be everyone from the age of 6 and up.
 
 ==Game Flow Summary==
 
-The player moves to the left (back) or the right (forward). It'll be a "regular 2D-Game" Game flow, where you have to get to the other side of the level. On level complete, the player are presented with a map, where he may choose which level to go to next. The interface flow will be quick and responsive, and minimalistic - easy to understand.
+The player moves to the left or the right of a level. It'll be a "regular 2D-sidescrolling-Game" Game flow, where you have to get to the other side of the level to complete it (apart from the boss fights in some). On level complete, the player are presented with a map, where he may choose which level to go to next. The interface flow will be quick and responsive, and minimalistic - easy to understand.
 
 ==Look and Feel==
 
@@ -194,9 +197,8 @@ The Main visual style of the game will be the "Vector'ish" design. It will be be
 
 ==Project Scope==
 
-The game will consist of 10 levels in total, with a large variety of themes. Each level will be one Act, story-wise, and it will all be spread among 4 islands (3 small, one big).
+The game will consist of 10 levels in total, with a large variety of themes. Each level will be one Act, story-wise, and it will all be spread among 2 islands (1 small, 1 big).
 
-http://bildr.no/image/428407.jpeg
 
 ===Number of Levels===
 
@@ -209,7 +211,7 @@ http://bildr.no/image/428407.jpeg
 ===Number of powerups===
 
 || 1 || HP Up ||
-|| 2 || Mana Up ||
+|| 2 || - ||
 || 3 || - ||
 
 =Gameplay and Mechanics=
@@ -218,19 +220,19 @@ The general gameplay will be familiar for most; classic 2D. Though it has its un
 
 ==Gameplay==
 
--
+Throughout the game, the player must always be aware of certain things. The basic thing is ofcourse that he must get from the starting position, to the opposite side of the level, or the assigned finishing spot. Other than that, theres the vital black surface the player walks on. He can only walk on this, but if he stays on it for too long, it will drag the player down, leading to death - meaning, the player must always be on the move.
 
 ===Game Progression===
 
--
+The player reaches progression as he clears levels and kills bosses. Additional bonuses may also be unlocked via exploring.
 
 ===Mission/Challenge structure===
 
--
+The challenge structure in the game will be quite simple. As mentioned before, its alot like the old NES sidescrollers and other 2D-sidescrolling games; get to the other side (or in some cases, on the top of the level, or below the surface, in other words, another specified finishing line). 
 
 ===Objectives===
 
-The main objectives in the game is to simply finish the level, and get to the next one.
+The main objectives in the game is to simply finish the level, and get to the next one. Side objectives, not mandatory though, is to collect rare, hidden items.
 
 ===Play Flow===
 
@@ -238,7 +240,7 @@ The game will flow nicely for the player, with smooth animations and a lagfree e
 
 ==Mechanics==
 
-What are the rules to the game, both implicit and explicit.  This is the model of the universe that the game works under.  Think of it as a simulation of a world, how do all the pieces interact? 
+Rules to the game, how do all the pieces interact? 
 
 ===Physics===
 
@@ -336,11 +338,11 @@ Saving can be done after each act/level is completed.
 
 =Story Setting and Character=
 
--
+The story is somewhat unclear at the moment, but will play a somewhat vital part in the game.
 
 ==Story and Narrative==
 
-Specific details like scripts and cut scenes may not be in this document but be in the Story Bible.  
+-
 
 ===Back Story===
 
@@ -372,11 +374,13 @@ The player sets onto his journey/tutorial'ish.
 
 ====Act III====
 
-This level is set in the moauntains of the starting island, and a boss is presented at the end. Upon victory, the player dies (not yet decided how), which leads him to the next rather interesting level.
+This level is set in the moauntains of the starting island, and a boss is presented at the end. Upon victory, the player dies (fails to kill the boss), which leads him to the next rather interesting level.
 
 ====Act IV====
 
-The player died, and came to heaven. Though, he got rejected at the gates of heaven, and through the whole level he is unstopable, and as he walks on the white skies, they turn black behind him, along with the sky turning black/blue'ish.
+The player died, and came to heaven. Though, he got rejected at the gates of heaven, and through the whole level he is unstoppable, and as he walks on the white skies, they turn black behind him, along with the sky turning black/blue'ish. 
+
+- The story begins.
 
 ====Act V====
 
