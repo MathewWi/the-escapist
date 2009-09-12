@@ -211,7 +211,7 @@ void MainChar::checkCollision(Obstacle* objects)
 				{
 					posX = collitionArea.x - SIZE_MAINCHAR - 1;
 					posY = collitionArea.y - SIZE_MAINCHAR - 1;
-					speedX = speedX*0.3;
+					speedX = speedX*SURFACE_HARDNESS_WALL;
 					if( speedX > 0 ) speedX = -speedX;
 					speedY = -speedY*SURFACE_HARDNESS_WALL;
 					if ( speedY > 0 ) speedY = -speedY;
