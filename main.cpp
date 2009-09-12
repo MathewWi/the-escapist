@@ -115,8 +115,8 @@ while (running)
 		
 		collCoords.x = 0;
 		collCoords.y = 0;
-		collCoords.w = 200;
-		collCoords.h = 50;
+		collCoords.w = 250;
+		collCoords.h = 180;
 		
 		for ( int a = 0; a < Obstacle::numberOfObjects; a++ )
 		{
